@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Subki - Android Developer & Flutter Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-tag {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #4f46e5;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #4f46e5; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">Ahmad Subki</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600">Beranda</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">Tentang</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-600">Pengalaman</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-indigo-600">Pendidikan</a>
+                    <a href="#publications" class="nav-link text-gray-700 hover:text-indigo-600">Publikasi</a>
+                    <a href="#certificates" class="nav-link text-gray-700 hover:text-indigo-600">Sertifikat</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Kontak</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Beranda</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">Tentang</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-indigo-600">Pengalaman</a>
+                <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600">Pendidikan</a>
+                <a href="#publications" class="block py-2 text-gray-700 hover:text-indigo-600">Publikasi</a>
+                <a href="#certificates" class="block py-2 text-gray-700 hover:text-indigo-600">Sertifikat</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm border-4 border-white/30">
+                    <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=RDiUfV4AAAAJ&citpid=12" 
+                         alt="Ahmad Subki Profile Photo" 
+                         class="w-full h-full object-cover"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm" style="display: none;">
+                        <i class="fas fa-user text-5xl text-white"></i>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Ahmad Subki</h1>
+                <div class="text-xl md:text-2xl mb-6">
+                    <span id="typing-text" class="typing-animation">Android Developer & Flutter Expert</span>
+                </div>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                    Pengembang Android berpengalaman 3 tahun dengan keahlian Flutter Framework. 
+                    Siap membantu mengembangkan aplikasi mobile yang inovatif dan berkualitas tinggi.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        Hubungi Saya
+                    </a>
+                    <button id="download-pdf" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i>
+                        Download PDF
+                    </button>
+                    <a href="https://github.com/ekiq11" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition duration-300">
+                        Lihat Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Tentang Saya</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Keahlian & Teknologi</h3>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fab fa-android mr-2"></i>Android
+                            </div>
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fab fa-apple mr-2"></i>iOS
+                            </div>
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fas fa-mobile-alt mr-2"></i>Flutter
+                            </div>
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fas fa-globe mr-2"></i>Web
+                            </div>
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fas fa-database mr-2"></i>MySQL
+                            </div>
+                            <div class="skill-tag text-white px-4 py-2 rounded-lg text-center font-medium">
+                                <i class="fas fa-paint-brush mr-2"></i>UI/UX Design
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Bahasa</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <span class="w-24 text-gray-600">Indonesia</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2 ml-4">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24 text-gray-600">Inggris</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2 ml-4">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24 text-gray-600">Arabic</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-2 ml-4">
+                                    <div class="bg-indigo-600 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Profil Profesional</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Halo, nama saya Ahmad Subki. Saya memiliki pengalaman sebagai Pengembang Android selama 3 tahun. 
+                            Selain itu, saya juga dapat membantu Anda mengembangkan aplikasi Android dengan Flutter Framework, 
+                            dan saya telah menggunakan flutter selama 3 tahun.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Beberapa project yang pernah saya kerjakan dapat dilihat di bagian portfolio (github) saya. 
+                            Saya berdedikasi untuk menciptakan aplikasi mobile yang tidak hanya fungsional, 
+                            tetapi juga memberikan pengalaman pengguna yang luar biasa.
+                        </p>
+                        <div class="flex items-center text-indigo-600">
+                            <i class="fas fa-quote-left text-2xl mr-3"></i>
+                            <span class="italic">"Terima kasih"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Pengalaman Kerja</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                                    Ketua Program Studi S1 Rekayasa Perangkat Lunak
+                                </h3>
+                                <p class="text-indigo-600 font-medium text-lg">Universitas Teknologi Mataram</p>
+                            </div>
+                            <div class="text-gray-500 mt-2 md:mt-0">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                08/2019 - Present
+                            </div>
+                        </div>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Mataram, Indonesia</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Universitas Teknologi Mataram merupakan salah satu Perguruan Tinggi Swasta yang berada di kota Mataram, 
+                            sebagian besar program studi di Universitas Teknologi Mataram difokuskan pada bidang teknologi informasi dan komunikasi.
+                        </p>
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold text-gray-800 mb-3">Keahlian yang Dikembangkan:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Android Development</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">iOS Development</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Flutter Framework</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Web Development</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Desktop Development</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Pendidikan</h2>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Master's Degree -->
+                    <div class="card-hover bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">Magister Informatika</h3>
+                                    <p class="text-indigo-600 font-medium">Universitas Islam Indonesia</p>
+                                </div>
+                            </div>
+                            <span class="text-gray-500 text-sm">09/2015 - 12/2017</span>
+                        </div>
+                        <div class="ml-16">
+                            <p class="text-gray-600 mb-2">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Yogyakarta, Indonesia
+                            </p>
+                            <p class="text-gray-700 font-medium">Thesis:</p>
+                            <p class="text-gray-600 italic">
+                                Analisis Perbandingan Rekaman Suara Voice Changer dengan Rekaman Suara Asli Menggunakan Metode Audio Forensik
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- D4 Degree -->
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-business-time text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">D4 Kewirausahaan</h3>
+                                    <p class="text-purple-600 font-medium">Institut Teknologi Bandung</p>
+                                </div>
+                            </div>
+                            <span class="text-gray-500 text-sm">09/2012 - 12/2013</span>
+                        </div>
+                        <div class="ml-16">
+                            <p class="text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Bandung, Indonesia
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- D3 Degree -->
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-laptop-code text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-800">D3 Manajemen Informatika</h3>
+                                    <p class="text-green-600 font-medium">AMIKOM Mataram</p>
+                                </div>
+                            </div>
+                            <span class="text-gray-500 text-sm">09/2009 - 07/2012</span>
+                        </div>
+                        <div class="ml-16">
+                            <p class="text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Mataram, Indonesia
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Publikasi Ilmiah</h2>
+                <div class="max-w-6xl mx-auto space-y-6">
+                    <!-- Publication 2025 -->
+                    <div class="card-hover bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">2025</span>
+                            <div class="flex items-center text-blue-600">
+                                <i class="fas fa-mobile-alt mr-2"></i>
+                                <span class="text-sm">Android Development</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            APLIKASI PENGENALAN PARIWISATA DESA WISATA SESAOT BERBASIS ANDROID
+                        </h3>
+                        <p class="text-gray-600 mb-2">D Arwidiyarti, <strong>A Subki</strong></p>
+                        <p class="text-sm text-gray-500">JRIS: Jurnal Rekayasa Informasi Swadharma 5 (2), 16-24</p>
+                    </div>
+
+                    <!-- Publication 2024 - 1 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-brain mr-2"></i>
+                                <span class="text-sm">AI & Computer Vision</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Crack Detection of Concrete Surfaces with A Combination of Feature Extraction and Image-Based Backpropagation Artificial Neural Networks
+                        </h3>
+                        <p class="text-gray-600 mb-2">E Wahyudi, B Imran, <strong>A Subki</strong>, Z Zaeniah, LD Samsumar, S Salman</p>
+                        <p class="text-sm text-gray-500">ILKOM Jurnal Ilmiah 16 (3), 228-235</p>
+                    </div>
+
+                    <!-- Publication 2024 - 2 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-leaf mr-2"></i>
+                                <span class="text-sm">IoT & Agriculture</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Pemanfaatan Teknologi IoT Dalam Sistem Pemupukan Otomatis Untuk Meningkatkan Efisiensi Dan Produktivitas Tanaman Tembakau
+                        </h3>
+                        <p class="text-gray-600 mb-2">LD Samsumar, <strong>A Subki</strong>, A Akbar</p>
+                        <p class="text-sm text-gray-500">Journal of Computer Science and Informatics Engineering 3 (4), 170-183</p>
+                    </div>
+
+                    <!-- Publication 2024 - 3 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-recycle mr-2"></i>
+                                <span class="text-sm">IoT & Smart Systems</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            RANCANG BANGUN ALAT PEMISAH SAMPAH CERDAS BERBASIS INTERNET OF THINGS
+                        </h3>
+                        <p class="text-gray-600 mb-2">T Gunawan, <strong>A Subki</strong>, A Akbar, LD Samsumar, S Supardianto</p>
+                        <p class="text-sm text-gray-500">Journal of Computer Science and Information Technology 1 (4)</p>
+                    </div>
+
+                    <!-- Publication 2024 - 4 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-heartbeat mr-2"></i>
+                                <span class="text-sm">IoT & Healthcare</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            MONITORING INFUS PADA PASIEN BERBASIS INTERNET OF THINGS (IOT) DENGAN APLIKASI BLYNK MENGGUNAKAN METODE SIMPLEX
+                        </h3>
+                        <p class="text-gray-600 mb-2">FA Putri, <strong>A Subki</strong>, MM Efendi, LD Samsumar</p>
+                        <p class="text-sm text-gray-500">Journal of Computer Science and Information Technology 1 (4), 304-315</p>
+                    </div>
+
+                    <!-- Publication 2024 - 5 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-coffee mr-2"></i>
+                                <span class="text-sm">Deep Learning & CNN</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Implementasi Deep Learning Menggunakan CNN dengan Arsitektur Alexnet Untuk Klasifikasi dan Identifikasi Jenis Kopi Khas Lombok
+                        </h3>
+                        <p class="text-gray-600 mb-2"><strong>A Subki</strong>, B Imran</p>
+                        <p class="text-sm text-gray-500">Explore 14 (2), 135-140</p>
+                    </div>
+
+                    <!-- Publication 2024 - 6 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-mosque mr-2"></i>
+                                <span class="text-sm">Flutter Development</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Building a Worship Demand Application with The Waterfall Method Using Flutter Framework at The Al-Muttaqin Mosque Suralaga, Indonesia
+                        </h3>
+                        <p class="text-gray-600 mb-2"><strong>A Subki</strong>, MM Efendi, E Wahyudi</p>
+                        <p class="text-sm text-gray-500">International Journal of Scientific Research 1 (01), 40-45</p>
+                    </div>
+
+                    <!-- Publication 2024 - 7 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-seedling mr-2"></i>
+                                <span class="text-sm">IoT & Agriculture</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Penerapan Internet of Things (IoT) untuk Pemantauan dan Pengendalian Otomatis Pemupukan Tanaman Bawang Merah di Desa Perampuan
+                        </h3>
+                        <p class="text-gray-600 mb-2">L Uziah, LD Samsumar, <strong>A Subki</strong></p>
+                        <p class="text-sm text-gray-500">Journal of Computer Science and Informatics Engineering 3 (4), 199-210</p>
+                    </div>
+
+                    <!-- Publication 2024 - 8 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-tint mr-2"></i>
+                                <span class="text-sm">IoT & Monitoring</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            PERANCANGAN SISTEM PEMANTAUAN KETINGGIAN AIR PADA TANDON AIR RUMAH BERBASIS IOT DENGAN APLIKASI BLYNK
+                        </h3>
+                        <p class="text-gray-600 mb-2">RA Ramiz, LD Samsumar, <strong>A Subki</strong>, M Zulpahmi</p>
+                        <p class="text-sm text-gray-500">Journal of Data Analytics, Information, and Computer Science 1 (4), 183-190</p>
+                    </div>
+
+                    <!-- Publication 2022 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">2022</span>
+                            <div class="flex items-center text-purple-600">
+                                <i class="fas fa-map-marked-alt mr-2"></i>
+                                <span class="text-sm">GIS & Android</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Pengembangan Sistem Informasi Geografis Destinasi Wisata Desa Tete Batu Berbasis Android
+                        </h3>
+                        <p class="text-gray-600 mb-2">S Erniwati, M Multazam, <strong>A Subki</strong></p>
+                        <p class="text-sm text-gray-500">Jutisi: Jurnal Ilmiah Teknik Informatika dan Sistem Informasi 11 (3), 763-774</p>
+                    </div>
+
+                    <!-- Publication 2020 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">2020</span>
+                            <div class="flex items-center text-orange-600">
+                                <i class="fas fa-utensils mr-2"></i>
+                                <span class="text-sm">GIS & Mobile App</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            DESIGNING GEOGRAPHIC INFORMATION SYSTEM CULINARY TOUR LOCATION IN THE WEST LOMBOK REGION MOBILE-BASED APPLICATION
+                        </h3>
+                        <p class="text-gray-600 mb-2">S Erniwati, <strong>A Subki</strong></p>
+                        <p class="text-sm text-gray-500">Jurnal Pilar Nusa Mandiri 16 (2), 233-240</p>
+                    </div>
+                </div>
+
+                <!-- Publication Stats -->
+                <div class="mt-16 grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">11</div>
+                        <div class="text-gray-600">Total Publikasi</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                        <div class="text-3xl font-bold text-green-600 mb-2">6</div>
+                        <div class="text-gray-600">Tahun 2024</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-100">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">5</div>
+                        <div class="text-gray-600">Bidang Penelitian</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border border-orange-100">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">8</div>
+                        <div class="text-gray-600">Jurnal Berbeda</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Sertifikat Profesional</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Certificate 1 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-certificate text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">BNSP</h3>
+                                <p class="text-xs text-gray-500">03/2019 - 03/2022</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Asesor Kompetensi</p>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-code text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">BNSP</h3>
+                                <p class="text-xs text-gray-500">10/2019 - 10/2022</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Kompetensi Pengembangan Perangkat Lunak / Programmer</p>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">KEMNAKER</h3>
+                                <p class="text-xs text-gray-500">04/2021 - Present</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Kompetensi Data Science & Machine Learning Dengan Python</p>
+                    </div>
+
+                    <!-- Certificate 4 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fab fa-python text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">BABA STUDIO</h3>
+                                <p class="text-xs text-gray-500">04/2021 - Present</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Data Science Python</p>
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fab fa-google text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">Google Developer</h3>
+                                <p class="text-xs text-gray-500">09/2018 - 12/2018</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Fasilitator Mobile Web Specialist 2018</p>
+                    </div>
+
+                    <!-- Certificate 6 -->
+                    <div class="card-hover bg-white rounded-xl p-6 shadow-lg border">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-cloud text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 text-sm">Dicoding</h3>
+                                <p class="text-xs text-gray-500">05/2022 - Present</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm">Sertifikat Belajar Dasar Google Cloud & AWS Cloud</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-fade">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Hubungi Saya</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-8">Mari Berkolaborasi</h3>
+                            <p class="text-gray-600 mb-8 leading-relaxed">
+                                Saya siap membantu mengembangkan aplikasi mobile yang inovatif dengan teknologi terdepan. 
+                                Jangan ragu untuk menghubungi saya untuk diskusi project atau kolaborasi.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Email</p>
+                                        <a href="mailto:ahmad.subki1992@gmail.com" class="text-indigo-600 hover:text-indigo-700">
+                                            ahmad.subki1992@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Telepon</p>
+                                        <a href="tel:089693652230" class="text-indigo-600 hover:text-indigo-700">
+                                            089693652230
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Alamat</p>
+                                        <p class="text-gray-600">
+                                            Jl. Krakatau, Dusun Gegutu Telaga,<br>
+                                            Desa Midang, Kec. Gunungsari,<br>
+                                            Lombok Barat, Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fab fa-github text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">GitHub</p>
+                                        <a href="https://github.com/ekiq11" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-700">
+                                            github.com/ekiq11
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-6">Kirim Pesan</h3>
+                            <form id="contact-form" class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Nama</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Subjek</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                    <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+                                    Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Ahmad Subki</h3>
+                <p class="text-gray-400 mb-6">Android Developer & Flutter Expert</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:ahmad.subki1992@gmail.com" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://github.com/ekiq11" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="tel:089693652230" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400">&copy; 2024 Ahmad Subki. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const texts = [
+            'Android Developer & Flutter Expert',
+            'Mobile App Developer',
+            'UI/UX Designer',
+            'Software Engineer'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typing animation
+        typeWriter();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with fade animation
+        document.querySelectorAll('.section-fade').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name') || this.querySelector('input[type="text"]').value;
+            const email = formData.get('email') || this.querySelector('input[type="email"]').value;
+            const subject = formData.get('subject') || this.querySelectorAll('input[type="text"]')[1].value;
+            const message = formData.get('message') || this.querySelector('textarea').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:ahmad.subki1992@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+            
+            // Open email client
+            window.open(mailtoLink, '_blank');
+            
+            // Show success message
+            alert('Terima kasih! Email client Anda akan terbuka dengan pesan yang sudah diisi.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // PDF Download functionality
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            // Show loading state
+            const button = this;
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Generating PDF...';
+            button.disabled = true;
+            
+            // Generate PDF content
+            const portfolioContent = `
+AHMAD SUBKI
+Android Developer & Flutter Expert
+
+KONTAK INFORMASI
+Email: ahmad.subki1992@gmail.com
+Telepon: 089693652230
+GitHub: github.com/ekiq11
+Alamat: Jl. Krakatau, Dusun Gegutu Telaga, Desa Midang, Kec. Gunungsari, Lombok Barat, Indonesia
+
+PROFIL PROFESIONAL
+Pengembang Android berpengalaman 3 tahun dengan keahlian Flutter Framework. Siap membantu mengembangkan aplikasi mobile yang inovatif dan berkualitas tinggi.
+
+KEAHLIAN TEKNOLOGI
+• Android Development
+• iOS Development  
+• Flutter Framework
+• Web Development
+• MySQL Database
+• UI/UX Design
+
+BAHASA
+• Indonesia (Native)
+• Inggris (80%)
+• Arabic (60%)
+
+PENGALAMAN KERJA
+Ketua Program Studi S1 Rekayasa Perangkat Lunak
+Universitas Teknologi Mataram | 08/2019 - Present
+Mataram, Indonesia
+
+PENDIDIKAN
+• Magister Informatika - Universitas Islam Indonesia (09/2015 - 12/2017)
+  Thesis: Analisis Perbandingan Rekaman Suara Voice Changer dengan Rekaman Suara Asli Menggunakan Metode Audio Forensik
+• D4 Kewirausahaan - Institut Teknologi Bandung (09/2012 - 12/2013)
+• D3 Manajemen Informatika - AMIKOM Mataram (09/2009 - 07/2012)
+
+PUBLIKASI ILMIAH (11 Publikasi)
+2025:
+• APLIKASI PENGENALAN PARIWISATA DESA WISATA SESAOT BERBASIS ANDROID
+  D Arwidiyarti, A Subki - JRIS: Jurnal Rekayasa Informasi Swadharma 5 (2), 16-24
+
+2024:
+• Crack Detection of Concrete Surfaces with A Combination of Feature Extraction and Image-Based Backpropagation Artificial Neural Networks
+  E Wahyudi, B Imran, A Subki, Z Zaeniah, LD Samsumar, S Salman - ILKOM Jurnal Ilmiah 16 (3), 228-235
+
+• Pemanfaatan Teknologi IoT Dalam Sistem Pemupukan Otomatis Untuk Meningkatkan Efisiensi Dan Produktivitas Tanaman Tembakau
+  LD Samsumar, A Subki, A Akbar - Journal of Computer Science and Informatics Engineering 3 (4), 170-183
+
+• RANCANG BANGUN ALAT PEMISAH SAMPAH CERDAS BERBASIS INTERNET OF THINGS
+  T Gunawan, A Subki, A Akbar, LD Samsumar, S Supardianto - Journal of Computer Science and Information Technology 1 (4)
+
+• MONITORING INFUS PADA PASIEN BERBASIS INTERNET OF THINGS (IOT) DENGAN APLIKASI BLYNK MENGGUNAKAN METODE SIMPLEX
+  FA Putri, A Subki, MM Efendi, LD Samsumar - Journal of Computer Science and Information Technology 1 (4), 304-315
+
+• Implementasi Deep Learning Menggunakan CNN dengan Arsitektur Alexnet Untuk Klasifikasi dan Identifikasi Jenis Kopi Khas Lombok
+  A Subki, B Imran - Explore 14 (2), 135-140
+
+• Building a Worship Demand Application with The Waterfall Method Using Flutter Framework at The Al-Muttaqin Mosque Suralaga, Indonesia
+  A Subki, MM Efendi, E Wahyudi - International Journal of Scientific Research 1 (01), 40-45
+
+• Penerapan Internet of Things (IoT) untuk Pemantauan dan Pengendalian Otomatis Pemupukan Tanaman Bawang Merah di Desa Perampuan
+  L Uziah, LD Samsumar, A Subki - Journal of Computer Science and Informatics Engineering 3 (4), 199-210
+
+• PERANCANGAN SISTEM PEMANTAUAN KETINGGIAN AIR PADA TANDON AIR RUMAH BERBASIS IOT DENGAN APLIKASI BLYNK
+  RA Ramiz, LD Samsumar, A Subki, M Zulpahmi - Journal of Data Analytics, Information, and Computer Science 1 (4), 183-190
+
+2022:
+• Pengembangan Sistem Informasi Geografis Destinasi Wisata Desa Tete Batu Berbasis Android
+  S Erniwati, M Multazam, A Subki - Jutisi: Jurnal Ilmiah Teknik Informatika dan Sistem Informasi 11 (3), 763-774
+
+2020:
+• DESIGNING GEOGRAPHIC INFORMATION SYSTEM CULINARY TOUR LOCATION IN THE WEST LOMBOK REGION MOBILE-BASED APPLICATION
+  S Erniwati, A Subki - Jurnal Pilar Nusa Mandiri 16 (2), 233-240
+
+SERTIFIKAT PROFESIONAL
+• BNSP - Sertifikat Asesor Kompetensi (03/2019 - 03/2022)
+• BNSP - Sertifikat Kompetensi Pengembangan Perangkat Lunak / Programmer (10/2019 - 10/2022)
+• KEMNAKER - Sertifikat Kompetensi Data Science & Machine Learning Dengan Python (04/2021 - Present)
+• BABA STUDIO - Sertifikat Data Science Python (04/2021 - Present)
+• Google Developer - Sertifikat Fasilitator Mobile Web Specialist 2018 (09/2018 - 12/2018)
+• Dicoding - Sertifikat Belajar Dasar Google Cloud & AWS Cloud (05/2022 - Present)
+
+Generated on: ${new Date().toLocaleDateString('id-ID')}
+            `;
+            
+            // Create and download PDF
+            setTimeout(() => {
+                const blob = new Blob([portfolioContent], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Ahmad_Subki_Portfolio.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Show success message
+                setTimeout(() => {
+                    alert('Portfolio berhasil didownload! File tersimpan sebagai Ahmad_Subki_Portfolio.txt');
+                }, 100);
+            }, 1500);
+        });
+
+        // Add active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-indigo-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-indigo-600');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98424cd570fb9c74',t:'MTc1ODcxNzEwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
