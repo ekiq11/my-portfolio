@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmad Subki - Android Developer & Flutter Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -75,6 +76,28 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        .playstore-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4aa, #00b09b);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .playstore-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 180, 155, 0.3);
+            background: linear-gradient(135deg, #00b09b, #00d4aa);
+        }
+
+        .playstore-badge:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -133,16 +156,23 @@
                     Pengembang Android berpengalaman 3 tahun dengan keahlian Flutter Framework. 
                     Siap membantu mengembangkan aplikasi mobile yang inovatif dan berkualitas tinggi.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#contact" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
                         Hubungi Saya
                     </a>
-                    <button id="download-pdf" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300 flex items-center justify-center">
-                        <i class="fas fa-download mr-2"></i>
+                    <button id="download-pdf" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-file-pdf mr-2"></i>
                         Download PDF
                     </button>
                     <a href="https://github.com/ekiq11" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition duration-300">
                         Lihat Portfolio
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=Lombok+Silicon+Island&hl=id" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="playstore-badge flex items-center">
+                        <i class="fab fa-google-play mr-2 text-lg"></i>
+                        Play Store Apps
                     </a>
                 </div>
             </div>
@@ -198,6 +228,24 @@
                                     <div class="bg-indigo-600 h-2 rounded-full" style="width: 60%"></div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Play Store Apps Section -->
+                        <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-100">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fab fa-google-play text-green-600 mr-2"></i>
+                                Aplikasi di Play Store
+                            </h3>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                Lihat koleksi aplikasi mobile yang telah saya publikasikan di Google Play Store
+                            </p>
+                            <a href="https://play.google.com/store/apps/developer?id=Lombok+Silicon+Island&hl=id" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center text-green-600 hover:text-green-700 font-medium text-sm">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Kunjungi Developer Page
+                            </a>
                         </div>
                     </div>
                     
@@ -535,7 +583,7 @@
                         <div class="text-gray-600">Total Publikasi</div>
                     </div>
                     <div class="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100">
-                        <div class="text-3xl font-bold text-green-600 mb-2">6</div>
+                        <div class="text-3xl font-bold text-green-600 mb-2">8</div>
                         <div class="text-gray-600">Tahun 2024</div>
                     </div>
                     <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-100">
@@ -709,6 +757,18 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fab fa-google-play text-indigo-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Play Store</p>
+                                        <a href="https://play.google.com/store/apps/developer?id=Lombok+Silicon+Island&hl=id" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-700">
+                                            Lombok Silicon Island
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
@@ -754,6 +814,9 @@
                     </a>
                     <a href="https://github.com/ekiq11" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=Lombok+Silicon+Island&hl=id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-google-play text-xl"></i>
                     </a>
                     <a href="tel:089693652230" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fas fa-phone text-xl"></i>
@@ -874,16 +937,242 @@
             this.reset();
         });
 
-        // PDF Download functionality
+        // PDF Download functionality with proper PDF generation
         document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            
             // Show loading state
             const button = this;
             const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Generating PDF...';
             button.disabled = true;
             
-            // Generate PDF content
-            const portfolioContent = `
+            try {
+                const doc = new jsPDF();
+                
+                // Set font
+                doc.setFont("helvetica");
+                
+                // Title
+                doc.setFontSize(20);
+                doc.setTextColor(79, 70, 229); // Indigo color
+                doc.text('AHMAD SUBKI', 20, 30);
+                
+                doc.setFontSize(14);
+                doc.setTextColor(100, 100, 100);
+                doc.text('Android Developer & Flutter Expert', 20, 40);
+                
+                // Contact Info
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('KONTAK INFORMASI', 20, 60);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('Email: ahmad.subki1992@gmail.com', 20, 70);
+                doc.text('Telepon: 089693652230', 20, 80);
+                doc.text('GitHub: github.com/ekiq11', 20, 90);
+                doc.text('Play Store: Lombok Silicon Island', 20, 100);
+                doc.text('Alamat: Jl. Krakatau, Dusun Gegutu Telaga, Desa Midang,', 20, 110);
+                doc.text('Kec. Gunungsari, Lombok Barat, Indonesia', 20, 120);
+                
+                // Professional Profile
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('PROFIL PROFESIONAL', 20, 140);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                const profileText = 'Pengembang Android berpengalaman 3 tahun dengan keahlian Flutter Framework. Siap membantu mengembangkan aplikasi mobile yang inovatif dan berkualitas tinggi.';
+                const splitProfile = doc.splitTextToSize(profileText, 170);
+                doc.text(splitProfile, 20, 150);
+                
+                // Skills
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('KEAHLIAN TEKNOLOGI', 20, 170);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('• Android Development', 20, 180);
+                doc.text('• iOS Development', 20, 190);
+                doc.text('• Flutter Framework', 20, 200);
+                doc.text('• Web Development', 20, 210);
+                doc.text('• MySQL Database', 20, 220);
+                doc.text('• UI/UX Design', 20, 230);
+                
+                // Languages
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('BAHASA', 20, 250);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('• Indonesia (Native)', 20, 260);
+                doc.text('• Inggris (80%)', 20, 270);
+                doc.text('• Arabic (60%)', 20, 280);
+
+                // Add new page for experience and education
+                doc.addPage();
+                
+                // Work Experience
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('PENGALAMAN KERJA', 20, 30);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('Ketua Program Studi S1 Rekayasa Perangkat Lunak', 20, 45);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('Universitas Teknologi Mataram | 08/2019 - Present', 20, 55);
+                doc.text('Mataram, Indonesia', 20, 65);
+                
+                const expText = 'Universitas Teknologi Mataram merupakan salah satu Perguruan Tinggi Swasta yang berada di kota Mataram, sebagian besar program studi di Universitas Teknologi Mataram difokuskan pada bidang teknologi informasi dan komunikasi.';
+                const splitExp = doc.splitTextToSize(expText, 170);
+                doc.text(splitExp, 20, 75);
+                
+                // Education
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('PENDIDIKAN', 20, 110);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('Magister Informatika', 20, 125);
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('Universitas Islam Indonesia | 09/2015 - 12/2017', 20, 135);
+                doc.text('Yogyakarta, Indonesia', 20, 145);
+                doc.text('Thesis: Analisis Perbandingan Rekaman Suara Voice Changer', 20, 155);
+                doc.text('dengan Rekaman Suara Asli Menggunakan Metode Audio Forensik', 20, 165);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('D4 Kewirausahaan', 20, 180);
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('Institut Teknologi Bandung | 09/2012 - 12/2013', 20, 190);
+                doc.text('Bandung, Indonesia', 20, 200);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('D3 Manajemen Informatika', 20, 215);
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('AMIKOM Mataram | 09/2009 - 07/2012', 20, 225);
+                doc.text('Mataram, Indonesia', 20, 235);
+                
+                // Certificates
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('SERTIFIKAT PROFESIONAL', 20, 255);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(60, 60, 60);
+                doc.text('• BNSP - Sertifikat Asesor Kompetensi (03/2019 - 03/2022)', 20, 265);
+                doc.text('• BNSP - Sertifikat Kompetensi Pengembangan Perangkat Lunak (10/2019 - 10/2022)', 20, 275);
+                
+                // Add new page for publications
+                doc.addPage();
+                
+                // Publications
+                doc.setFontSize(16);
+                doc.setTextColor(0, 0, 0);
+                doc.text('PUBLIKASI ILMIAH (11 Publikasi)', 20, 30);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('2025:', 20, 50);
+                
+                doc.setFontSize(9);
+                doc.setTextColor(60, 60, 60);
+                let pubText = '• APLIKASI PENGENALAN PARIWISATA DESA WISATA SESAOT BERBASIS ANDROID';
+                let splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 60);
+                doc.text('  D Arwidiyarti, A Subki - JRIS: Jurnal Rekayasa Informasi Swadharma 5 (2), 16-24', 20, 70);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('2024 (8 Publikasi):', 20, 90);
+                
+                doc.setFontSize(9);
+                doc.setTextColor(60, 60, 60);
+                pubText = '• Crack Detection of Concrete Surfaces with Feature Extraction and AI Neural Networks';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 100);
+                
+                pubText = '• Pemanfaatan Teknologi IoT Dalam Sistem Pemupukan Otomatis Tanaman Tembakau';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 110);
+                
+                pubText = '• RANCANG BANGUN ALAT PEMISAH SAMPAH CERDAS BERBASIS IoT';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 120);
+                
+                pubText = '• MONITORING INFUS PADA PASIEN BERBASIS IoT DENGAN APLIKASI BLYNK';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 130);
+                
+                pubText = '• Implementasi Deep Learning CNN Alexnet Klasifikasi Jenis Kopi Khas Lombok';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 140);
+                
+                pubText = '• Building Worship Demand Application with Flutter Framework at Al-Muttaqin Mosque';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 150);
+                
+                pubText = '• Penerapan IoT untuk Pemantauan Pemupukan Tanaman Bawang Merah di Desa Perampuan';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 160);
+                
+                pubText = '• PERANCANGAN SISTEM PEMANTAUAN KETINGGIAN AIR BERBASIS IoT';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 170);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('2022:', 20, 190);
+                
+                doc.setFontSize(9);
+                doc.setTextColor(60, 60, 60);
+                pubText = '• Pengembangan Sistem Informasi Geografis Destinasi Wisata Desa Tete Batu Berbasis Android';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 200);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(79, 70, 229);
+                doc.text('2020:', 20, 220);
+                
+                doc.setFontSize(9);
+                doc.setTextColor(60, 60, 60);
+                pubText = '• DESIGNING GEOGRAPHIC INFORMATION SYSTEM CULINARY TOUR LOCATION IN WEST LOMBOK';
+                splitPub = doc.splitTextToSize(pubText, 170);
+                doc.text(splitPub, 20, 230);
+                
+                // Footer
+                doc.setFontSize(8);
+                doc.setTextColor(100, 100, 100);
+                doc.text(`Generated on: ${new Date().toLocaleDateString('id-ID')}`, 20, 280);
+                
+                // Save PDF
+                doc.save('Ahmad_Subki_Portfolio.pdf');
+                
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Show success message
+                setTimeout(() => {
+                    alert('Portfolio PDF berhasil didownload!');
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                
+                // Fallback to text file if PDF generation fails
+                const portfolioContent = `
 AHMAD SUBKI
 Android Developer & Flutter Expert
 
@@ -891,6 +1180,7 @@ KONTAK INFORMASI
 Email: ahmad.subki1992@gmail.com
 Telepon: 089693652230
 GitHub: github.com/ekiq11
+Play Store: Lombok Silicon Island
 Alamat: Jl. Krakatau, Dusun Gegutu Telaga, Desa Midang, Kec. Gunungsari, Lombok Barat, Indonesia
 
 PROFIL PROFESIONAL
@@ -926,37 +1216,20 @@ PUBLIKASI ILMIAH (11 Publikasi)
   D Arwidiyarti, A Subki - JRIS: Jurnal Rekayasa Informasi Swadharma 5 (2), 16-24
 
 2024:
-• Crack Detection of Concrete Surfaces with A Combination of Feature Extraction and Image-Based Backpropagation Artificial Neural Networks
-  E Wahyudi, B Imran, A Subki, Z Zaeniah, LD Samsumar, S Salman - ILKOM Jurnal Ilmiah 16 (3), 228-235
-
+• Crack Detection of Concrete Surfaces with Feature Extraction and Image-Based Backpropagation Artificial Neural Networks
 • Pemanfaatan Teknologi IoT Dalam Sistem Pemupukan Otomatis Untuk Meningkatkan Efisiensi Dan Produktivitas Tanaman Tembakau
-  LD Samsumar, A Subki, A Akbar - Journal of Computer Science and Informatics Engineering 3 (4), 170-183
-
 • RANCANG BANGUN ALAT PEMISAH SAMPAH CERDAS BERBASIS INTERNET OF THINGS
-  T Gunawan, A Subki, A Akbar, LD Samsumar, S Supardianto - Journal of Computer Science and Information Technology 1 (4)
-
 • MONITORING INFUS PADA PASIEN BERBASIS INTERNET OF THINGS (IOT) DENGAN APLIKASI BLYNK MENGGUNAKAN METODE SIMPLEX
-  FA Putri, A Subki, MM Efendi, LD Samsumar - Journal of Computer Science and Information Technology 1 (4), 304-315
-
 • Implementasi Deep Learning Menggunakan CNN dengan Arsitektur Alexnet Untuk Klasifikasi dan Identifikasi Jenis Kopi Khas Lombok
-  A Subki, B Imran - Explore 14 (2), 135-140
-
 • Building a Worship Demand Application with The Waterfall Method Using Flutter Framework at The Al-Muttaqin Mosque Suralaga, Indonesia
-  A Subki, MM Efendi, E Wahyudi - International Journal of Scientific Research 1 (01), 40-45
-
 • Penerapan Internet of Things (IoT) untuk Pemantauan dan Pengendalian Otomatis Pemupukan Tanaman Bawang Merah di Desa Perampuan
-  L Uziah, LD Samsumar, A Subki - Journal of Computer Science and Informatics Engineering 3 (4), 199-210
-
 • PERANCANGAN SISTEM PEMANTAUAN KETINGGIAN AIR PADA TANDON AIR RUMAH BERBASIS IOT DENGAN APLIKASI BLYNK
-  RA Ramiz, LD Samsumar, A Subki, M Zulpahmi - Journal of Data Analytics, Information, and Computer Science 1 (4), 183-190
 
 2022:
 • Pengembangan Sistem Informasi Geografis Destinasi Wisata Desa Tete Batu Berbasis Android
-  S Erniwati, M Multazam, A Subki - Jutisi: Jurnal Ilmiah Teknik Informatika dan Sistem Informasi 11 (3), 763-774
 
 2020:
 • DESIGNING GEOGRAPHIC INFORMATION SYSTEM CULINARY TOUR LOCATION IN THE WEST LOMBOK REGION MOBILE-BASED APPLICATION
-  S Erniwati, A Subki - Jurnal Pilar Nusa Mandiri 16 (2), 233-240
 
 SERTIFIKAT PROFESIONAL
 • BNSP - Sertifikat Asesor Kompetensi (03/2019 - 03/2022)
@@ -967,10 +1240,8 @@ SERTIFIKAT PROFESIONAL
 • Dicoding - Sertifikat Belajar Dasar Google Cloud & AWS Cloud (05/2022 - Present)
 
 Generated on: ${new Date().toLocaleDateString('id-ID')}
-            `;
-            
-            // Create and download PDF
-            setTimeout(() => {
+                `;
+                
                 const blob = new Blob([portfolioContent], { type: 'text/plain' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
@@ -985,11 +1256,11 @@ Generated on: ${new Date().toLocaleDateString('id-ID')}
                 button.innerHTML = originalText;
                 button.disabled = false;
                 
-                // Show success message
+                // Show fallback message
                 setTimeout(() => {
-                    alert('Portfolio berhasil didownload! File tersimpan sebagai Ahmad_Subki_Portfolio.txt');
+                    alert('Portfolio berhasil didownload sebagai file teks (fallback karena masalah PDF)!');
                 }, 100);
-            }, 1500);
+            }
         });
 
         // Add active navigation highlighting
@@ -1014,5 +1285,5 @@ Generated on: ${new Date().toLocaleDateString('id-ID')}
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98424cd570fb9c74',t:'MTc1ODcxNzEwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
